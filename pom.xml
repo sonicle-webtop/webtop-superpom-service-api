@@ -10,23 +10,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		
+		<!-- JAVA DEPENDENCIES VERSIONS -->
+		<slf4j-api.version>1.7.6</slf4j-api.version>
+		<jooq.version>3.5.3</jooq.version>
+		<quartz.version>2.2.1</quartz.version>
+		<joda-time.version>2.7</joda-time.version>
+		<ical4j.version>2.0.0</ical4j.version>
     </properties>
 	
 	<dependencies>
-		<!--
-		<dependency>
-			<groupId>com.sonicle.webtop</groupId>
-			<artifactId>webtop-core</artifactId>
-			<version>LATEST</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sonicle.webtop</groupId>
-			<artifactId>webtop-core-db</artifactId>
-			<version>LATEST</version>
-			<scope>provided</scope>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>com.sonicle.webtop</groupId>
 			<artifactId>webtop-core-api</artifactId>
@@ -36,25 +29,19 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.6</version>
+			<version>${slf4j-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
-			<version>3.5.3</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.7</version>
+			<version>${jooq.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
-			<version>2.2.1</version>
+			<version>${quartz.version}</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -64,9 +51,15 @@
 			</exclusions>
 		</dependency>
 		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.mnode.ical4j</groupId>
 			<artifactId>ical4j</artifactId>
-			<version>2.0.0</version>
+			<version>${ical4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
