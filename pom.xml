@@ -12,24 +12,42 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
 		<!-- JAVA DEPENDENCIES VERSIONS -->
-		<slf4j-api.version>1.7.6</slf4j-api.version>
-		<jooq.version>3.5.3</jooq.version>
-		<quartz.version>2.2.1</quartz.version>
-		<joda-time.version>2.7</joda-time.version>
+		<atmosphere.version>2.4.20</atmosphere.version>
+		<commons-collections.version>3.2.2</commons-collections.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-vfs2.version>2.2</commons-vfs2.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<ez-vcard.version>0.10.4</ez-vcard.version>
+		<hikaricp.version>2.4.13</hikaricp.version>
 		<ical4j.version>2.0.0</ical4j.version>
+		<imgscalr.version>4.2</imgscalr.version>
+		<jackson.version>2.9.4</jackson.version>
+		<jersey.version>2.25.1</jersey.version>
+		<joda-time.version>2.7</joda-time.version>
+		<jooq.version>3.5.3</jooq.version>
+		<logback.version>1.2.1</logback.version>
+		<poi.version>3.14</poi.version>
+		<quartz.version>2.2.1</quartz.version>
+		<shiro.version>1.3.2</shiro.version>
+		<slf4j.version>1.7.6</slf4j.version>
+		<super-csv.version>2.3.1</super-csv.version>
+		<swagger.version>2.0.0</swagger.version>
+		<swagger-annotations.version>1.5.18</swagger-annotations.version>
     </properties>
 	
 	<dependencies>
+		<!-- container libraries -->
 		<dependency>
-			<groupId>com.sonicle.webtop</groupId>
-			<artifactId>webtop-core-api</artifactId>
-			<version>LATEST</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- 3rd party libraries -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j-api.version}</version>
+			<version>${slf4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -60,6 +78,33 @@
 			<groupId>org.mnode.ical4j</groupId>
 			<artifactId>ical4j</artifactId>
 			<version>${ical4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.ez-vcard</groupId>
+			<artifactId>ez-vcard</artifactId>
+			<version>${ez-vcard.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jsoup</groupId>
+					<artifactId>jsoup</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.freemarker</groupId>
+					<artifactId>freemarker</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- WebTop libraries -->
+		<dependency>
+			<groupId>com.sonicle.webtop</groupId>
+			<artifactId>webtop-core-api</artifactId>
+			<version>LATEST</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
