@@ -157,7 +157,7 @@
 					<dependency>
 						<groupId>org.postgresql</groupId>
 						<artifactId>postgresql</artifactId>
-						<version>9.3-1102-jdbc4</version>
+						<version>${postgresql.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -203,36 +203,40 @@
 									</jdbc>
 									<generator>
 										<database>
-											<name>org.jooq.util.postgres.PostgresDatabase</name>
+											<name>org.jooq.meta.postgres.PostgresDatabase</name>
 											<includes>.*</includes>
-											<excludes></excludes>
+											<excludes>.*(\.old|_old)</excludes>
 											<inputSchema>${webtop.service.db.schema}</inputSchema>
-											<customTypes>
-												<customType>
-													<name>JodaLocalDate</name>
-													<type>org.joda.time.LocalDate</type>
-													<converter>com.sonicle.webtop.core.jooq.LocalDateConverter</converter>
-												</customType>
-												<customType>
-													<name>JodaDateTime</name>
-													<type>org.joda.time.DateTime</type>
-													<converter>com.sonicle.webtop.core.jooq.DateTimeConverter</converter>
-												</customType>
-											</customTypes>
 											<forcedTypes>
 												<forcedType>
-													<name>JodaLocalDate</name>
-													<expression>.*</expression>
-													<types>date.*</types>
+													<userType>org.joda.time.LocalDate</userType>
+													<converter>com.sonicle.jooq.jsr310.LocalDateJodaConverter</converter>
+													<includeExpression>.*</includeExpression>
+													<includeTypes>date</includeTypes>
 												</forcedType>
 												<forcedType>
-													<name>JodaDateTime</name>
-													<expression>.*</expression>
-													<types>timestamp.*</types>
+													<userType>org.joda.time.LocalDateTime</userType>
+													<converter>com.sonicle.jooq.jsr310.LocalDateTimeJodaConverter</converter>
+													<includeExpression>.*</includeExpression>
+													<includeTypes>timestamp</includeTypes>
+												</forcedType>
+												<forcedType>
+													<userType>org.joda.time.LocalTime</userType>
+													<converter>com.sonicle.jooq.jsr310.LocalTimeJodaConverter</converter>
+													<includeExpression>.*</includeExpression>
+													<includeTypes>time</includeTypes>
+												</forcedType>
+												<forcedType>
+													<userType>org.joda.time.DateTime</userType>
+													<converter>com.sonicle.jooq.jsr310.OffsetDateTimeJodaConverter</converter>
+													<includeExpression>.*</includeExpression>
+													<includeTypes>timestamptz</includeTypes>
 												</forcedType>
 											</forcedTypes>
 										</database>
 										<generate>
+											<fullyQualifiedTypes>.*</fullyQualifiedTypes>
+											<globalCatalogReferences>false</globalCatalogReferences>
 											<pojos>true</pojos>
 											<immutablePojos>false</immutablePojos>
 										</generate>
