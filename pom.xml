@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sonicle.webtop</groupId>
     <artifactId>webtop-superpom-service-api</artifactId>
-    <version>10</version><!-- Any update to this version MUST be reflected in webtop-superpom-service also: both projects MUST have same version! -->
+    <version>11</version><!-- Any update to this version MUST be reflected in webtop-superpom-service also: both projects MUST have same version! -->
     <packaging>pom</packaging>
 	
 	<parent>
