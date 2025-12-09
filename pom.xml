@@ -17,7 +17,7 @@
 		<webtop.service.baseArtifact><!-- fill in child POM --></webtop.service.baseArtifact>
 		<webtop.service.package><!-- fill in child POM --></webtop.service.package>
 		
-		<!-- WEBTOP: service configuration (loaded from "${user.home}/.m2/${artifactId}.properties") -->
+		<!-- WEBTOP: service configuration (loaded from "${user.home}/.m2/${webtop.service.baseArtifact}.properties") -->
 		<!--
 			JDBC Driver to use in JOOQ configuration
 		<webtop.service.db.jdbc.driver></webtop.service.db.jdbc.driver>
