@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sonicle.webtop</groupId>
     <artifactId>webtop-superpom-service-api</artifactId>
-    <version>11</version><!-- Any update to this version MUST be reflected in webtop-superpom-service also: both projects MUST have same version! -->
+    <version>12</version><!-- Any update to this version MUST be reflected in webtop-superpom-service also: both projects MUST have same version! -->
     <packaging>pom</packaging>
 	
 	<parent>
@@ -13,6 +13,9 @@
 	</parent>
 	
 	<properties>
+		<!-- WEBTOP: base references -->
+		<webtop-core.version>[5.0,6.0-alpha)</webtop-core.version>
+		
 		<!-- WEBTOP: service configuration -->
 		<webtop.service.baseArtifact><!-- fill in child POM --></webtop.service.baseArtifact>
 		<webtop.service.package><!-- fill in child POM --></webtop.service.package>
@@ -105,7 +108,7 @@
 		<dependency>
 			<groupId>com.sonicle.webtop</groupId>
 			<artifactId>webtop-core-api</artifactId>
-			<version>LATEST</version>
+			<version>${webtop-core.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
